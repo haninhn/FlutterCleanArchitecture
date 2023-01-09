@@ -22,7 +22,7 @@ dependencies:
   dartz: ^0.10.1
 
   #Value equality
-  equatable: ^2.0.3   #comparer classes
+  equatable: ^2.0.3   #compare two instances of the same class?
   #Service locator
   get_it: ^7.2.0  #depInjection
   #Remote API
