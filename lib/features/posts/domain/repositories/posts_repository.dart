@@ -4,7 +4,7 @@ import 'package:flutter_demo/features/posts/domain/entities/post.dart';
 
 import '../../../../core/error/failures.dart';
 
-abstract class Postsrepository {
+abstract class Postsrepository {   //abstract  class because class is with multipel use (mchtrak) between domain and data lyer
   //usecases
   Future<Either<Failure, List<Post>>> getAllPosts(); //getpost return a list
 //Future ASYNC like suspend
