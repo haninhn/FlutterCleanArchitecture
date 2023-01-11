@@ -28,4 +28,4 @@ final appTheme = ThemeData(
         border: OutlineInputBorder(
           borderSide: const BorderSide(color: primaryColor),
           borderRadius: BorderRadius.circular(8),
-        )));
+)));

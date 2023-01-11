@@ -50,7 +50,7 @@ class PostRepositoryImpl implements Postsrepository {
     if (await networkInfo.isConnected) {
       try {
         final remotePosts = await remoteDateSource.getAllPosts();
-        localDateSource.cachedPosts(remotePosts);
+        localDateSource.cachePosts(remotePosts);
         return Right(remotePosts);
       } on ServerException {
         return Left(ServerFailure());
