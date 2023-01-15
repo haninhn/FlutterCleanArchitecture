@@ -59,7 +59,7 @@ class PostRepositoryImpl implements Postsrepository {
       try {
         final localPosts = await localDateSource.getCachedPosts();
         return Right(localPosts);
-      } on ServerException {
+      } on ServerException { 
         return Left(EmptyCasheFailure());
       }
     }
