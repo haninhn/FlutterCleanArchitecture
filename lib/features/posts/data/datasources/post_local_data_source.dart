@@ -1,9 +1,7 @@
 import 'dart:convert';
-
 import 'package:dartz/dartz.dart';
 import 'package:flutter_demo/core/error/exceptions.dart';
 import 'package:flutter_demo/features/posts/data/models/post_model.dart';
-import 'package:flutter_demo/features/posts/domain/entities/post.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
 abstract class PostLocalDateSource {

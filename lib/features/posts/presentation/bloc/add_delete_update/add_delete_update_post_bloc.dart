@@ -1,6 +1,6 @@
-import 'package:bloc/bloc.dart';
 import 'package:dartz/dartz.dart';
 import 'package:equatable/equatable.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_demo/features/posts/domain/entities/post.dart';
 import 'package:flutter_demo/features/posts/domain/usecases/add_post.dart';
 import 'package:flutter_demo/features/posts/domain/usecases/delete_post.dart';
@@ -8,7 +8,6 @@ import 'package:flutter_demo/features/posts/domain/usecases/update_post.dart';
 import '../../../../../core/error/failures.dart';
 import '../../../../../core/strings/failures.dart';
 import '../../../../../core/strings/message.dart';
-
 part 'add_delete_update_post_event.dart';
 part 'add_delete_update_post_state.dart';
 
@@ -61,5 +60,4 @@ class AddDeleteUpdatePostBloc extends Bloc<AddDeleteUpdatePostEvent, AddDeleteUp
         return "Unexpected Error, Please try again later.";
     }
   }
-
 }

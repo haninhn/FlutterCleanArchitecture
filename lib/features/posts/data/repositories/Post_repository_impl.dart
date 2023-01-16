@@ -1,3 +1,5 @@
+
+// ignore_for_file: file_names
 import 'package:flutter_demo/core/error/exceptions.dart';
 import 'package:flutter_demo/core/network/ntwork_info.dart';
 import 'package:flutter_demo/features/posts/domain/entities/post.dart';
