@@ -1,4 +1,8 @@
 import 'package:flutter_demo/core/network/ntwork_info.dart';
+import 'package:flutter_demo/features/posts/data/datasources/post_local_data_source.dart';
+import 'package:flutter_demo/features/posts/data/datasources/post_remote_date_source.dart';
+import 'package:flutter_demo/features/posts/data/repositories/Post_repository_impl.dart';
+import 'package:flutter_demo/features/posts/domain/repositories/posts_repository.dart';
 import 'package:flutter_demo/features/posts/domain/usecases/add_post.dart';
 import 'package:flutter_demo/features/posts/domain/usecases/delete_post.dart';
 import 'package:flutter_demo/features/posts/domain/usecases/get_all_posts.dart';
@@ -17,7 +21,7 @@ Future<void> init() async {
 
 // Bloc
   sl.registerFactory(() => PostsBloc(getAllPosts: sl()));
-  sl.registerFactory(() => AddDeleteUpdatePostBloc(addPost: sl(), updatePost: sl(), deletePost: sl()));
+ // sl.registerFactory(() => AddDeleteUpdatePostBloc(addPost: sl(), updatePost: sl(), deletePost: sl()));
 
 //"registerFactory" method ensures that a new instance of the class is created every time it is accessed.
   
@@ -34,12 +38,12 @@ Future<void> init() async {
   //and it will only be created when it is first accessed
 
   // Repository
-  sl.registerLazySingleton<PostsRepository>(() => PostsRepositoryImpl( remoteDataSource: sl(), localDataSource: sl(), networkInfo: sl()));
+  sl.registerLazySingleton<Postsrepository>(() => PostRepositoryImpl(remoteDateSource: sl(), localDateSource: sl(), networkInfo: sl()));
  //<PostsRepository> is a type parameter to specify the type of the instance that is going to be registered.
 
  // Datasources
-  sl.registerLazySingleton<PostRemoteDataSource>(() => PostRemoteDataSourceImpl(client: sl()));
-  sl.registerLazySingleton<PostLocalDataSource>(() => PostLocalDataSourceImpl(sharedPreferences: sl()));
+  sl.registerLazySingleton<PostRemoteDateSource>(() => PostRemoteDateSourceImpl(client: sl()));
+  sl.registerLazySingleton<PostLocalDateSource>(() => PostLocalDateSourceImpl(sharedPreferences: sl()));
 //! Core
 
   sl.registerLazySingleton<NetworkInfo>(() => NetworkInfoImpl(sl()));

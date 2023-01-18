@@ -40,8 +40,7 @@ class PostRemoteDateSourceImpl implements PostRemoteDateSource {
   @override
   Future<Unit> deletePost(int postId)async {
     final response = await client.delete(Uri.parse(baseurl + "/posts/${postId.toString()}"),
-    headers: {"Content-Type": "application/json"},
-    );
+    headers: {"Content-Type": "application/json"},);
     if (response.statusCode == 201) {
       return Future.value(unit);
     } else {

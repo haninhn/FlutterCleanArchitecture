@@ -3,3 +3,25 @@
   "title": "some title",
   "body": "some body"
 } 
+
+{
+   "code": 200,
+   "message": "Success",
+  "payload": { "chapters": [
+  {
+     "chapter": {
+         "id": 5102,
+        "name": "الإختبارات",
+         "type": "exam",
+        "o_id": 5850,
+       "slug": "5102-الإختبارات",
+         },
+        "chapterContent": 107594,
+         "firstLessonSlug": "92485-تقييم-عدد-1-في-اللّغة-الإصلاح",
+         "instructor": "Hamdi Rhouma, Mohamed Amine Jebali, souad guenichi",
+        "nbContent": "0",
+       "firstLessonId": "92485"
+  }
+        ]
+    }
+  }
